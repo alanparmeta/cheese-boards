@@ -1,10 +1,10 @@
-// model for user
+// model for Cheese
 const { DataTypes, Model } = require('sequelize')
 const db = require('../db/db')
 
-class User extends Model{ }
+class Cheese extends Model{ }
 
-User.init({ 
+Cheese.init({ 
     name: {
         type: DataTypes.STRING,
         // primaryKey: true,
@@ -18,4 +18,4 @@ User.init({
     sequelize: db  
 })
 
-module.exports = User
+module.exports = Cheese

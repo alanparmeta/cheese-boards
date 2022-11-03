@@ -1,4 +1,4 @@
-// model for user
+// model for User
 const { DataTypes, Model } = require('sequelize')
 const db = require('../db/db')
 
