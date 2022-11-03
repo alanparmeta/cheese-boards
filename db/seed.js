@@ -9,13 +9,16 @@ async function seed () {
 
     await Cheese.bulkCreate([
         {
-            type: "Camembert"
+            name: "Camembert",
+            email: "camembert@normandy.fr"
         },
         {
-            type: "Brie"
+            name: "Brie",
+            email: "brie@normandy.fr"
         },
         {
-            type: "Cheddar"
+            name: "Cheddar",
+            email: "cheddar@gorge.co.uk"
         }
     ])
 
