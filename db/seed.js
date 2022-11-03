@@ -37,10 +37,12 @@ async function seed () {
 
     await User.bulkCreate([
         {
-            type: "Frenchperson"
+            type: "Frenchperson",
+            email: "monsieurdame@google.fr"
         },
         {
-            type: "Englishperson"
+            type: "Englishperson",
+            email: "gentladyperson@google.co.uk"
         }
     ])
 }
