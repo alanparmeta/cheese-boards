@@ -24,10 +24,14 @@ async function seed () {
 
     await Board.bulkCreate([
         {
-            type: "French"
+            type: "French",
+            description: "Camembert and Brie from Normandy",
+            rating: "5/5: Awesome!"
         },
         {
-            type: "English"
+            type: "English",
+            description: "Cheddar from the UK",
+            rating: "4/4: Nice!"
         }
     ])
 
