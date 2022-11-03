@@ -11,10 +11,10 @@ async function seed () {
     await Cheese.bulkCreate([
         {
             type: "Camembert"
-        }
+        },
         {
             type: "Brie"
-        }
+        },
         {
             type: "Cheddar"
         }
@@ -23,7 +23,7 @@ async function seed () {
     await Board.bulkCreate([
         {
             type: "French"
-        }
+        },
         {
             type: "English"
         }
@@ -32,7 +32,7 @@ async function seed () {
     await User.bulkCreate([
         {
             type: "Frenchperson"
-        }
+        },
         {
             type: "Englishperson"
         }
