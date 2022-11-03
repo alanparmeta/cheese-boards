@@ -1,5 +1,4 @@
 const { Cheese, Board, User } = require('../models') /* will automatically look for index.js */
-const { bulkCreate } = require('../models/author.model')
 const db = require('./db')
 
 // seeding is first population of the database
