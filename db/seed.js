@@ -1,3 +1,6 @@
+// seed mainstay cheeses
+// seasonal cheeses will be added on an ad hoc basis 
+
 const { Cheese, Board, User } = require('../models') /* will automatically look for index.js */
 const db = require('./db')
 
@@ -9,16 +12,16 @@ async function seed () {
 
     await Cheese.bulkCreate([
         {
-            name: "Camembert",
-            email: "camembert@normandy.fr"
+            title: "Camembert",
+            description: "White rind and strong flavour"
         },
         {
-            name: "Brie",
-            email: "brie@normandy.fr"
+            title: "Brie",
+            description: "White rind and mild flavour"
         },
         {
-            name: "Cheddar",
-            email: "cheddar@gorge.co.uk"
+            title: "Cheddar",
+            description: "Yellow block with mild or mature variants"
         }
     ])
 
@@ -31,7 +34,7 @@ async function seed () {
         {
             type: "English",
             description: "Cheddar from the UK",
-            rating: "4/4: Nice!"
+            rating: "4/5: Nice!"
         }
     ])
 

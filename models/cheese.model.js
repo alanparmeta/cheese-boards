@@ -5,10 +5,10 @@ const db = require('../db/db')
 class Cheese extends Model{ }
 
 Cheese.init({ 
-    name: {
+    title: {
         type: DataTypes.STRING,
     },
-    email: {
+    description: {
         type: DataTypes.STRING,
     }
 }, {
