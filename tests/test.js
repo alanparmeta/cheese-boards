@@ -43,9 +43,9 @@ test("Tests board title and description and their types", async () => {
     expect(testBoard.type).toEqual("French")
     expect(typeof(testBoard.type)).toEqual("string")
     expect(testBoard.description).toEqual("Some of the finest cheeses in the world")
-    expect(typeof(testBoard.type)).toEqual("string")
+    expect(typeof(testBoard.description)).toEqual("string")
     expect(testBoard.rating).toEqual(5)
-    expect(typeof(testBoard.type)).toEqual("number")
+    expect(typeof(testBoard.rating)).toEqual("number")
 })
 
 });
