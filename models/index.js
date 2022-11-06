@@ -1,16 +1,16 @@
+const { Sequelize } = require("sequelize")
 const Board = require("./board.model")
 const Cheese = require("./cheese.model")
 const User = require("./user.model")
+// const conn = new Sequelize()
 
 // Associate the User and Board models with a One-to-Many relationship
+// "To create a One-To-Many relationship, the hasMany and belongsTo associations are used together"
 Board.belongsTo(User)
 User.hasMany(Board)
-
-// A cheese can be on many boards, and a board can have many cheeses
-// A user has one board
-// A cheese has one user
-
-// A cheese belongs to a board
-// A board belongs to a user
+// Associate the Board and Cheese models with a Many-to-Many relationship
+//  "To create a Many-To-Many relationship, two belongsToMany calls are used together."
+Board.belongsToMany(Cheese, {through: 'Board_Cheese'})
+Cheese.belongsToMany(Board, {through: 'Board_Cheese'})
 
 module.exports = { Board, Cheese, User }

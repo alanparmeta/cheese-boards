@@ -1,9 +1,8 @@
 const db = require('../db/db.js')
-const { Cheese } = require('../models')
-const { User } = require('../models')
-const { Board } = require('../models')
+const { Cheese, User, Board } = require('../models')
 
-describe("Cheese tests", () => {
+describe("Tests", () => {
+// Clear the database first
     beforeAll(async () => {
         await db.sync({
             force: true
@@ -11,7 +10,6 @@ describe("Cheese tests", () => {
     })
     
 // the following tests check that tables can be created and that one can insert data into them
-        
 test("Tests user title and description and their types", async () => {
     const testUser = await User.build({
         name: "Anthea",
@@ -47,5 +45,42 @@ test("Tests board title and description and their types", async () => {
     expect(testBoard.rating).toEqual(5)
     expect(typeof(testBoard.rating)).toEqual("number")
 })
+
+test("Test if we can add boards for the user", async () => {
+    await Board.bulkCreate([
+        {
+            type: "French",
+            description: "Camembert and Brie from Normandy",
+            rating: 5
+        },
+        {
+            type: "English",
+            description: "Cheddar from the UK",
+            rating: 4
+        }
+    ])
+    const board = Board.findByPk(1, {include: User})
+    test.istruthy
+})
+
+test("Test if we can add cheeses on boards", async () => {
+    await Cheese.bulkCreate([
+        {
+            title: "Camembert",
+            description: "White rind and strong flavour"
+        },
+        {
+            title: "Brie",
+            description: "White rind and mild flavour"
+        },
+        {
+            title: "Cheddar",
+            description: "Yellow block with mild or mature variants"
+        }
+    ])
+    const board = Board.findByPk(1, {include: Cheese})
+    test.istruthy    
+})
+// Test if we can add boards for the user
 
 });
