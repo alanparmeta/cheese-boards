@@ -50,14 +50,9 @@ test("Test if we can add boards for the user", async () => {
     await Board.bulkCreate([
         {
             type: "French",
-            description: "Camembert and Brie from Normandy",
+            description: "French cheese",
             rating: 5
         },
-        {
-            type: "English",
-            description: "Cheddar from the UK",
-            rating: 4
-        }
     ])
     const board = Board.findByPk(1, {include: User})
     test.istruthy
@@ -69,18 +64,8 @@ test("Test if we can add cheeses on boards", async () => {
             title: "Camembert",
             description: "White rind and strong flavour"
         },
-        {
-            title: "Brie",
-            description: "White rind and mild flavour"
-        },
-        {
-            title: "Cheddar",
-            description: "Yellow block with mild or mature variants"
-        }
     ])
     const board = Board.findByPk(1, {include: Cheese})
     test.istruthy    
 })
-// Test if we can add boards for the user
-
 });
