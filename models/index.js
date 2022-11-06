@@ -2,7 +2,11 @@ const Board = require("./board.model")
 const Cheese = require("./cheese.model")
 const User = require("./user.model")
 
-// A cheese has one board, but a board has many cheeses
+// Associate the User and Board models with a One-to-Many relationship
+Board.belongsTo(User)
+User.hasMany(Board)
+
+// A cheese can be on many boards, and a board can have many cheeses
 // A user has one board
 // A cheese has one user
 

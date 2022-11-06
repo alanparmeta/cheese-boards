@@ -29,12 +29,12 @@ async function seed () {
         {
             type: "French",
             description: "Camembert and Brie from Normandy",
-            rating: "5/5: Awesome!"
+            rating: 5
         },
         {
             type: "English",
             description: "Cheddar from the UK",
-            rating: "4/5: Nice!"
+            rating: 4
         }
     ])
 
